@@ -6,13 +6,20 @@ import androidx.lifecycle.ViewModel
 import com.hfad.yandexweather.model.RepositoryImp
 import java.lang.Thread.sleep
 
-class MainViewModel (private val repositoryImp: RepositoryImp = RepositoryImp(),
+class MainViewModel (
+    private val liveDataDTOToObserver:MutableLiveData<AppState> = MutableLiveData(),
+    private val repositoryImp: RepositoryImp = RepositoryImp(),
                      private val liveDataToObserver:MutableLiveData<AppState> = MutableLiveData()):ViewModel() {
 
     fun getData():LiveData<AppState>{
         return liveDataToObserver
     }
 
+    fun getWeatherDTO(){
+        Thread{
+            liveDataDTOToObserver.postValue(AppState.SuccessDTO(repositoryImp.getWeatherFromServer()))
+        }
+    }
 
     fun getWeather() = getDataLocalSource()
 

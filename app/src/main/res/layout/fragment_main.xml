@@ -6,17 +6,24 @@
     android:orientation="vertical"
     tools:context=".view.FragmentMain">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Получить информацию с сервера" />
 
     <TextView
         android:id="@+id/nameCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_gravity="center"
         android:textSize="40sp" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="horizontal">
 
         <TextView
@@ -35,11 +42,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Температура" />
+
     <TextView
         android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:hint="****" />
 
 
