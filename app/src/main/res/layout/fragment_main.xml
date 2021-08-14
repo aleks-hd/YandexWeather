@@ -6,52 +6,109 @@
     android:orientation="vertical"
     tools:context=".view.FragmentMain">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submitWeather"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Получить информацию с сервера" />
-
-    <TextView
-        android:id="@+id/nameCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="40sp" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/lat"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="@dimen/zeroDP"
             android:layout_height="wrap_content"
-            android:hint="широта" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/lar"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/nameCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/sizeNameCity" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/shirota" />
+
+                <TextView
+                    android:id="@+id/lar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Dolgota" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/temp" />
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="@string/other" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutFomServer"
+            android:layout_width="@dimen/zeroDP"
             android:layout_height="wrap_content"
-            android:hint="долгота" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Температура" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/latEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/shirota"
+                android:inputType="numberDecimal" />
 
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="****" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/lonEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Dolgota"
+                android:inputType="numberDecimal" />
 
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/inputInfoFromServer" />
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/feelsLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iconWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/loadingLayout"

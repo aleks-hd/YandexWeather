@@ -1,7 +1,8 @@
 package com.hfad.yandexweather.viewmodel
 
-import com.hfad.yandexweather.WeatherDTO
+
 import com.hfad.yandexweather.model.Weather
+import com.hfad.yandexweather.model.WeatherDTO
 
 sealed class AppState{
     data class SuccessDTO(val weatherdto: WeatherDTO): AppState()

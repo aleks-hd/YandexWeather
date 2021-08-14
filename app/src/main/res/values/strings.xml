@@ -2,4 +2,9 @@
     <string name="app_name">YandexWeather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Dolgota">долгота</string>
+    <string name="temp">Температура</string>
+    <string name="other">****</string>
+    <string name="shirota">широта</string>
+    <string name="inputInfoFromServer">Получить информацию с сервера</string>
 </resources>
